@@ -1,34 +1,30 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Button } from '@/components/ui/button'
+import { ModeToggle } from '@/components/mode-toggle'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className='h-screen w-screen p-4 overflow-hidden'>
+      <div className='absolute right-4 top-4'>
+        <ModeToggle />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className='flex justify-center items-center h-full'>
+      <Card className='w-full max-w-lg'>
+        <CardHeader>
+          <CardTitle>Vite + React + Tailwind + shadcn/ui</CardTitle>
+          <CardDescription>Button Example</CardDescription>
+        </CardHeader>
+        <CardContent className='flex justify-center'>
+          <Button className='tabular-nums' onClick={() => setCount((count) => count + 1)}>
+            count is {count}
+          </Button>
+        </CardContent>
+      </Card>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
