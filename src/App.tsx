@@ -18,7 +18,7 @@ function App() {
           <CardDescription>Button Example</CardDescription>
         </CardHeader>
         <CardContent className='flex justify-center'>
-          <Button onClick={() => setCount((count) => count + 1)}>
+          <Button className='tabular-nums' onClick={() => setCount((count) => count + 1)}>
             count is {count}
           </Button>
         </CardContent>
